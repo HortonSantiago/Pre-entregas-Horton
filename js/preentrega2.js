@@ -2,6 +2,12 @@ let patients = [];
 let rta;
 let turno = 0;
 const maxTurns = 5; // tenemos 5 turnos disponibles como maximo x dia
+const availableDays = ["MARTES", "JUEVES"]; // dia de atencion
+
+const tareas = {};
+availableDays.forEach((day) => {
+  tareas[day] = [];
+});
 
 while(rta !== "NO"){
     rta = prompt("¿Quieres un turno? SI o NO");
@@ -29,27 +35,43 @@ function addPatient() {
     let edad = prompt("Ingrese su Edad: ");
     let obra = prompt("Ingrese su obra social: ");
     let tel = prompt("Ingrese su telefono: ");
+    let day = prompt ("Ingrese el dia del turno preferido (MARTES o JUEVES): ");
     
+  if (!availableDays.includes(day)){
+     console.log ("dia invalido. UNICAMENTE MARTES O JUEVES.");
+     return;
+  }
+  if (tareas[day].length >= maxTurns){
+    console.log("no hay turnos disponibles para el dia" + day + ".");
+    return;
+  }
     let patient = {
         name: name,
         dni: dni,
         edad: edad,
         obra: obra,
-        tel: tel
+        tel: tel,
+        day: day,
     };
     
     patients.push(patient);
+    tareas[day].push(patient);
 
-    let turno = patients.length;
+    let turno = tareas[day].length;
     let remainingTurns = maxTurns - turno;
-    console.log("Su turno asignado es el número: " + turno + ". Quedan " + remainingTurns + " turnos disponibles.");
+    console.log(
+      "Su turno asignado es el dia: "+ 
+      day + 
+      "\n su numero de atencion es el :  " + 
+      turno + 
+      "\n quedan : " + 
+      remainingTurns + 
+      " turnos disponibles para ese dia.");
 
     return patients;
     
 }
-
 console.log(patients);
-
 let searchName = prompt("Ingrese el nombre completo del paciente que desea buscar: ");
 let foundPatient = null;
 
