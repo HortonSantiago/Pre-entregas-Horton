@@ -45,6 +45,24 @@ function addPatient() {
     console.log("Su turno asignado es el número: " + turno + ". Quedan " + remainingTurns + " turnos disponibles.");
 
     return patients;
+    
 }
 
 console.log(patients);
+
+let searchName = prompt("Ingrese el nombre completo del paciente que desea buscar: ");
+let foundPatient = null;
+
+//  forEach para buscar el paciente por nombre
+patients.forEach((paciente) => {
+  if (paciente.name === searchName) {
+    foundPatient = paciente;
+  }
+});
+
+if (foundPatient) {
+  console.log("Lista de paciente/s encontrados:");
+  console.log(foundPatient);
+} else {
+  console.log("No se encontró al paciente con el nombre proporcionado.");
+}
