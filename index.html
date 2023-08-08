@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turnero de Pacientes</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Turnero de Pacientes Iterativo desde html</title>
 </head>
 <body>
 
@@ -18,31 +19,38 @@
 
 <main>
     <form>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name">
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni">
 
-        <label for="documento">DNI:</label>
-        <input type="text" id="documento">
+        <label for="age">Edad:</label>
+        <input type="text" id="age">
 
-        <label for="nombreObra">Obra social: </label>
-        <input type="text" id="nombreObra">
-    
+        <label for="card">Obra social: </label>
+        <input type="text" id="card">
+
+        <label for="tel">Telefono: </label>
+        <input type="text" id="tel">
+
+        <label for="day">Dia del turno (MARTES O JUEVES): </label>
+        <select  id="day">
+          <option value="MARTES">MARTES</option>
+          <option value="JUEVES">JUEVES</option>
+        </select>
   
-        <label for="historiaClinica">Historia Clínica:</label>
-        <textarea id="historiaClinica"></textarea>
+        
   
-        <button type="button" onclick="agregarPaciente(pacientes)">Agregar Paciente</button>
+        <button type="button" onclick="addPatient()">Agregar Paciente</button>
     </form>
 </main>
 
 <footer>
     <h3>Lista de Pacientes</h3>
-    <ul id="listaPacientes"></ul>
+    <ul id="patientList"></ul>
 </footer>
 
-<script src="./js/preentrega2.js"></script>
+<script src="./js/preEntrega3.js"></script>
 </body>
 </html>
