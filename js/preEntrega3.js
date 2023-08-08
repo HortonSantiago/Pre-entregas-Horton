@@ -18,11 +18,11 @@ function addPatient(){
     let day = document.getElementById("day").value.toUpperCase();
 
     if(!availableDays.includes(day)){
-        console.log("dia invalido. unicamente MARTES O JUEVES. ");
+        alert("dia invalido. unicamente MARTES O JUEVES. ");
         return;
     }
     if(tasks[day].length >= maxTurns){
-        console.log("No quedan turnos disponibles para ese dia");
+        alert("No quedan turnos disponibles para ese dia");
         return;
     }
     let patient = {
@@ -78,6 +78,6 @@ function loadDatafromLocalStorage(){
     const data = localStorage.getItem("patientsData");
     if(data){
         patients = JSON.parse(data);
-        displayLastPatient();
+        
     }
 }
