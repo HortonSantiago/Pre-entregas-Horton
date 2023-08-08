@@ -43,6 +43,7 @@
         
   
         <button type="button" onclick="addPatient()">Agregar Paciente</button>
+        <button type="button" id="resetButton">Reset</button>
     </form>
 </main>
 
@@ -51,6 +52,11 @@
     <ul id="patientList"></ul>
 </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      loadDatafromLocalStorage();
+  });
+  </script>
 <script src="./js/preEntrega3.js"></script>
 </body>
 </html>

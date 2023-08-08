@@ -21,6 +21,10 @@ function addPatient(){
         console.log("dia invalido. unicamente MARTES O JUEVES. ");
         return;
     }
+    if(tasks[day].length >= maxTurns){
+        console.log("No quedan turnos disponibles para ese dia");
+        return;
+    }
     let patient = {
         name: name,
         dni: dni,
@@ -41,19 +45,28 @@ function addPatient(){
       shift + 
       "\n quedan : " + 
       remainingTurns + 
-      " turnos disponibles para ese dia.");
+      " turnos disponibles para ese dia."
+      );
 
     saveDataToLocalStorage();
     displayLastPatient();
 }
+const resetButton = document.getElementById("resetButton");
+
+resetButton.addEventListener("click", function() {
+    patients = [];
+    const patientList = document.getElementById("patientList");
+    patientList.innerHTML = "";
+});
 
 function displayLastPatient() {
     const patientList = document.getElementById("patientList");
+    if(patients.length > 0){
     const lastPatient = patients[patients.length - 1];
     const patientItem = document.createElement("li");
     patientItem.innerText = `Nombre: ${lastPatient.name}, DNI: ${lastPatient.dni}, Edad: ${lastPatient.edad}, Obra Social: ${lastPatient.obra}, Teléfono: ${lastPatient.tel}, Día Turno: ${lastPatient.day}`;
     patientList.appendChild(patientItem);
-}
+}}
 
 
 
