@@ -21,6 +21,9 @@ form{
     flex-direction: column;
 
 }
+.diver{
+    text-align: center;
+}
 form > div {
     width: 33%;
     box-sizing: border-box;
