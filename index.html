@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Turnero de Pacientes Iterativo desde html</title>
 </head>
 <body>
@@ -19,37 +19,45 @@
 
 <main>
     <form>
+      <h2>Ingrese el paciente para asignarle un turno: </h2>
+      <div>
         <label for="name">Nombre:</label>
         <input type="text" id="name">
-
+      </div>
+      <div>
         <label for="dni">DNI:</label>
         <input type="text" id="dni">
-
+      </div>
+      <div>
         <label for="age">Edad:</label>
         <input type="text" id="age">
-
+      </div>
+      <div>
         <label for="card">Obra social: </label>
         <input type="text" id="card">
-
+      </div>
+      <div>
         <label for="tel">Telefono: </label>
         <input type="text" id="tel">
-
-        <label for="day">Dia del turno (MARTES O JUEVES): </label>
-        <select  id="day">
-          <option value="MARTES">MARTES</option>
-          <option value="JUEVES">JUEVES</option>
-        </select>
-  
-        
-  
-        <button type="button" onclick="addPatient()">Agregar Paciente</button>
-        <button type="button" id="resetButton">Reset</button>
+      </div>
+        <div>
+          <label for="day">Dia del turno (MARTES O JUEVES): </label>
+          <select  id="day">
+            <option value="MARTES">MARTES</option>
+            <option value="JUEVES">JUEVES</option>
+          </select>
+        </div>   
+        <div>
+            <button type="button" onclick="addPatient()">Agregar Paciente</button>
+            <button type="button" id="resetButton">Reset</button>
+        </div>
     </form>
 </main>
 
-<footer>
-    <h3>Lista de Pacientes</h3>
-    <ul id="patientList"></ul>
+<footer class="footer-container">
+  <h3>Lista de Pacientes</h3>
+  <ul id="patientList"></ul>
+  <button id="fetchButton">Fetch Data</button>
 </footer>
 
 <script>

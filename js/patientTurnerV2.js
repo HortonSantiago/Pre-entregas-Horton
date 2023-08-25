@@ -4,7 +4,7 @@ const availableDays = ["MARTES", "JUEVES"];
 let shift = 0;
 const tasks = {};
 availableDays.forEach((day) => {
-  tasks[day] = [];
+tasks[day] = [];
 });
 
 loadDatafromLocalStorage();
