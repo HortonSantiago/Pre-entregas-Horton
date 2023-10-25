@@ -1,70 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Turnero de Pacientes Iterativo desde html</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Turnos Consultorio Medico</h1>
+        <p>Bienvenido/a: Florencia</p>
+        <button>Mis datos</button>
+        <button>Salir</button>
+      </nav>
+    </header>
 
-<header>
-  <nav>
-    <h1>Turnos Consultorio Medico</h1>
-    <p>Bienvenido/a: Florencia</p>
-    <button> Mis datos </button>
-    <button> Salir </button>
-  </nav>
-</header>
-
-<main>
-    <form>
-      <h2>Ingrese el paciente para asignarle un turno: </h2>
-      <div>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name">
-      </div>
-      <div>
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni">
-      </div>
-      <div>
-        <label for="age">Edad:</label>
-        <input type="text" id="age">
-      </div>
-      <div>
-        <label for="card">Obra social: </label>
-        <input type="text" id="card">
-      </div>
-      <div>
-        <label for="tel">Telefono: </label>
-        <input type="text" id="tel">
-      </div>
-        <div class="diver">
-          <label for="day">Dia del turno (MARTES O JUEVES): </label>
-          <select  id="day">
-            <option value="MARTES">MARTES</option>
-            <option value="JUEVES">JUEVES</option>
-          </select>
-        </div>   
+    <main>
+      <form>
+        <h2>Ingrese el paciente para asignarle un turno:</h2>
         <div>
-            <button type="button" onclick="addPatient()">Agregar Paciente</button>
-            <button type="button" id="resetButton">Reset</button>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" />
         </div>
-    </form>
-</main>
+        <div>
+          <label for="dni">DNI:</label>
+          <input type="text" id="dni" />
+        </div>
+        <div>
+          <label for="age">Edad:</label>
+          <input type="text" id="age" />
+        </div>
+        <div>
+          <label for="card">Obra social: </label>
+          <input type="text" id="card" />
+        </div>
+        <div>
+          <label for="tel">Telefono: </label>
+          <input type="text" id="tel" />
+        </div>
+        <div class="diver">
+          <label for="date">Fecha del turno:</label>
+          <input type="date" id="date" />
+        </div>
+        <div>
+          <button type="button" onclick="addPatient()">Agregar Paciente</button>
+          <button type="button" id="resetButton">Reset</button>
+        </div>
+      </form>
+      <div id="messageContainer"></div>
+    </main>
 
-<footer class="footer-container">
-  <h3>Lista de Pacientes</h3>
-  <ul id="patientList"></ul>
-  <button id="fetchButton">Fetch Data</button>
-</footer>
+    <footer class="footer-container">
+      <h3>Lista de Pacientes</h3>
+      <ul id="patientList onclick=" showPatientsWithTurn()></ul>
+      <button id="fetchButton" onclick="fetchData()">Fetch Data</button>
+    </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      loadDatafromLocalStorage();
-  });
-  </script>
-<script src="./js/finalProyect.js"></script>
-</body>
+    <script src="./js/finalProyect.js"></script>
+  </body>
 </html>
